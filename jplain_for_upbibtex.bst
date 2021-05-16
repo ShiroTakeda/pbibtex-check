@@ -1473,6 +1473,48 @@ FUNCTION {check.substring}
 
   "\vspace{1em}" write$  newline$
 
+  "αβγδεζηθι" #1 #1 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の1文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #2 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の2文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #3 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の3文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #4 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の4文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #5 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の5文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #6 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の6文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #7 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の7文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #8 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の8文字 = 「" str * "」" * write$  newline$  
+  "αβγδεζηθι" #1 #9 substring$ 'str :=
+  "\\ 「αβγδεζηθι」の最初の9文字 = 「" str * "」" * write$  newline$  
+
+  "\vspace{1em}" write$  newline$
+
+  "àäåæçëøÿû" #1 #1 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の1文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #2 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の2文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #3 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の3文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #4 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の4文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #5 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の5文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #6 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の6文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #7 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の7文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #8 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の8文字 = 「" str * "」" * write$  newline$  
+  "àäåæçëøÿû" #1 #9 substring$ 'str :=
+  "\\ 「àäåæçëøÿû」の最初の9文字 = 「" str * "」" * write$  newline$  
+
+  "\vspace{1em}" write$  newline$
+
   "あいうえおか" #-1 #1 substring$ 'str :=
   "\\ 「あいうえおか」の最後の1文字 = 「" str * "」" * write$  newline$
   "あいうえおか" #-1 #2 substring$ 'str :=

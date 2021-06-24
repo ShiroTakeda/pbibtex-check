@@ -1,15 +1,19 @@
+
 <!--
 Filename:       README.md
 Author:         Shiro Takeda
 e-mail          <shiro.takeda@gmail.com>
 First-written:  <2006/12/04>
-Time-stamp:     <2021-05-09 22:14:52 st>
+Time-stamp:     <2021-05-17 09:08:29 st>
 -->
 
 (u)pbibtx の動作チェック
 ==============================
 
 (u)pbitex の動作をチェックするためのプログラム。
+
+- is.kanji.str$ 命令の動作のチェック
+- substring$ 命令の動作のチェック
 
 | ファイル                                           | 説明                      |
 |:---------------------------------------------------|:--------------------------|

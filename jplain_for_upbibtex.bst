@@ -1398,6 +1398,14 @@ FUNCTION {check.is.kanji.str}
     { "\noindent 「﨑」は kanji です。\\" write$  newline$ }
     { "\noindent 「﨑」は kanji じゃないです。\\" write$  newline$ }
   if$
+  "东" is.kanji.str$
+    { "\noindent 「东」は kanji です。\\" write$  newline$ }
+    { "\noindent 「东」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "권" is.kanji.str$
+    { "\noindent 「권」は kanji です。\\" write$  newline$ }
+    { "\noindent 「권」は kanji じゃないです。\\" write$  newline$ }
+  if$
   "α" is.kanji.str$
     { "\noindent 「α」は kanji です。\\" write$  newline$ }
     { "\noindent 「α」は kanji じゃないです。\\" write$  newline$ }

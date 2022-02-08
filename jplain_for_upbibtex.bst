@@ -1368,60 +1368,50 @@ ITERATE {longest.label.pass}
 
 STRINGS { str }
 
-FUNCTION {check.is.kanji.str}
+INTEGERS { nos }
+
+FUNCTION {check.text.length}
 {
-  "\vspace*{2em}" write$  newline$ newline$
-  "\section{\texttt{is.kanji.str\$} 命令の動作}" write$  newline$
-  "まず、\texttt{is.kanji.str\$} 命令の動作のチェックをする。関数名は \texttt{is.kanji.str\$} であるが、漢字か否かではなく、和文文字として扱うか、そうではないかの判断。" write$  newline$
+  "\vspace*{1em}" write$  newline$ newline$
+  "\section{\texttt{text.length\$} 命令の動作のチェック}" write$  newline$
+  "\texttt{text.length\$} 命令は文字列の文字の数を数える関数。和文文字は1文字にカウントされない。" write$  newline$
   "\vspace*{1em} \\" write$  newline$
-  "あ" is.kanji.str$
-    { "\noindent 「あ」は kanji です。\\" write$ newline$ }
-    { "\noindent 「あ」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "a" is.kanji.str$
-    { "\noindent 「a」は kanji です。\\" write$  newline$ }
-    { "\noindent 「a」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "ö" is.kanji.str$
-    { "\noindent 「ö」は kanji です。\\" write$  newline$ }
-    { "\noindent 「ö」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "ę" is.kanji.str$
-    { "\noindent 「ę」は kanji です。\\" write$  newline$ }
-    { "\noindent 「ę」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "鷗" is.kanji.str$
-    { "\noindent 「鷗」は kanji です。\\" write$  newline$ }
-    { "\noindent 「鷗」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "﨑" is.kanji.str$
-    { "\noindent 「﨑」は kanji です。\\" write$  newline$ }
-    { "\noindent 「﨑」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "东" is.kanji.str$
-    { "\noindent 「东」は kanji です。\\" write$  newline$ }
-    { "\noindent 「东」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "권" is.kanji.str$
-    { "\noindent 「권」は kanji です。\\" write$  newline$ }
-    { "\noindent 「권」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "α" is.kanji.str$
-    { "\noindent 「α」は kanji です。\\" write$  newline$ }
-    { "\noindent 「α」は kanji じゃないです。\\" write$  newline$ }
-  if$
-  "Γ" is.kanji.str$
-    { "\noindent 「Γ」は kanji です。\\" write$  newline$ }
-    { "\noindent 「Γ」は kanji じゃないです。\\" write$  newline$ }
-  if$
+
+  "a" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「a」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "ab" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「ab」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "abc" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「abc」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "abcd" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「abcd」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あい" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あい」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あいう" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あいう」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あいうえ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あいうえ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  
+  "\vspace{1em}" write$  newline$
 }
-EXECUTE {check.is.kanji.str}
+  
+EXECUTE {check.text.length}  
 
 FUNCTION {check.substring}
 {
-  "\vspace*{2em}" write$  newline$ newline$
+  "\vspace*{1em}" write$  newline$ newline$
   "\section{\texttt{substring\$} 命令の動作のチェック}" write$  newline$
-  "まず、\texttt{substring\$} 命令の動作のチェックをする。これは文字列から一部の文字列を抜き出す関数。アルファベットの場合は単純な動作であるが、和文文字の場合、一つの文字が何文字分として扱かわれるかが問題。" write$  newline$
+  "\texttt{substring\$} 命令の動作のチェック。これは文字列から一部の文字列を抜き出す関数。アルファベットの場合は単純な動作であるが、和文文字の場合、一つの文字が何文字分として扱かわれるかが問題。" write$  newline$
   "\vspace*{1em} \\" write$  newline$
   
   "あいうえおか" #1 #1 substring$ 'str :=
@@ -1582,6 +1572,55 @@ FUNCTION {check.substring}
 
 }
 EXECUTE {check.substring}
+
+FUNCTION {check.is.kanji.str}
+{
+  "\vspace*{1em}" write$  newline$ newline$
+  "\section{\texttt{is.kanji.str\$} 命令の動作}" write$  newline$
+  "\texttt{is.kanji.str\$} 命令の動作のチェック。関数名は \texttt{is.kanji.str\$} であるが、漢字か否かではなく、和文文字として扱うか、そうではないかの判断。" write$  newline$
+  "\vspace*{1em} \\" write$  newline$
+  "あ" is.kanji.str$
+    { "\noindent 「あ」は kanji です。\\" write$ newline$ }
+    { "\noindent 「あ」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "a" is.kanji.str$
+    { "\noindent 「a」は kanji です。\\" write$  newline$ }
+    { "\noindent 「a」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "ö" is.kanji.str$
+    { "\noindent 「ö」は kanji です。\\" write$  newline$ }
+    { "\noindent 「ö」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "ę" is.kanji.str$
+    { "\noindent 「ę」は kanji です。\\" write$  newline$ }
+    { "\noindent 「ę」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "鷗" is.kanji.str$
+    { "\noindent 「鷗」は kanji です。\\" write$  newline$ }
+    { "\noindent 「鷗」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "﨑" is.kanji.str$
+    { "\noindent 「﨑」は kanji です。\\" write$  newline$ }
+    { "\noindent 「﨑」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "东" is.kanji.str$
+    { "\noindent 「东」は kanji です。\\" write$  newline$ }
+    { "\noindent 「东」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "권" is.kanji.str$
+    { "\noindent 「권」は kanji です。\\" write$  newline$ }
+    { "\noindent 「권」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "α" is.kanji.str$
+    { "\noindent 「α」は kanji です。\\" write$  newline$ }
+    { "\noindent 「α」は kanji じゃないです。\\" write$  newline$ }
+  if$
+  "Γ" is.kanji.str$
+    { "\noindent 「Γ」は kanji です。\\" write$  newline$ }
+    { "\noindent 「Γ」は kanji じゃないです。\\" write$  newline$ }
+  if$
+}
+EXECUTE {check.is.kanji.str}
 
 FUNCTION {begin.bib}
 

@@ -1368,11 +1368,50 @@ ITERATE {longest.label.pass}
 
 STRINGS { str }
 
+INTEGERS { nos }
+
+FUNCTION {check.text.length}
+{
+  "\vspace*{1em}" write$  newline$ newline$
+  "\section{\texttt{text.length\$} 命令の動作のチェック}" write$  newline$
+  "\texttt{text.length\$} 命令は文字列の文字の数を数える関数。和文文字は1文字にカウントされない。" write$  newline$
+  "\vspace*{1em} \\" write$  newline$
+
+  "a" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「a」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "ab" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「ab」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "abc" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「abc」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "abcd" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「abcd」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あい" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あい」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あいう" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あいう」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "あいうえ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「あいうえ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  
+  "\vspace{1em}" write$  newline$
+}
+  
+EXECUTE {check.text.length}  
+
 FUNCTION {check.substring}
 {
-  "\vspace*{2em}" write$  newline$ newline$
+  "\vspace*{1em}" write$  newline$ newline$
   "\section{\texttt{substring\$} 命令の動作のチェック}" write$  newline$
-  "まず、\texttt{substring\$} 命令の動作のチェックをする。これは文字列から一部の文字列を抜き出す関数。アルファベットの場合は単純な動作であるが、和文文字の場合、一つの文字が何文字分として扱かわれるかが問題。" write$  newline$
+  "\texttt{substring\$} 命令の動作のチェック。これは文字列から一部の文字列を抜き出す関数。アルファベットの場合は単純な動作であるが、和文文字の場合、一つの文字が何文字分として扱かわれるかが問題。" write$  newline$
   "\vspace*{1em} \\" write$  newline$
   
   "あいうえおか" #1 #1 substring$ 'str :=

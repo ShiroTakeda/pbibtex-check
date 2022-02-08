@@ -16,7 +16,7 @@ call %1:\texlive\%2\bin\win32\dvipdfmx %5_%2.dvi
 
 del %5_%2.log
 del %5_%2.aux
-del %5_%2.blg
-del %5_%2.bbl
+: del %5_%2.blg
+: del %5_%2.bbl
 
 exit

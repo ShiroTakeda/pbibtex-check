@@ -1401,6 +1401,18 @@ FUNCTION {check.text.length}
   "あいうえ" text.length$ 'nos :=
   nos int.to.str$ 'str :=
   "\\ 「あいうえ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "α" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「α」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "αβ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「αβ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "αβγ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「αβγ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
+  "αβγδ" text.length$ 'nos :=
+  nos int.to.str$ 'str :=
+  "\\ 「αβγδ」の \verb|text.length$| = 「" str * "」" * write$  newline$  
   
   "\vspace{1em}" write$  newline$
 }
